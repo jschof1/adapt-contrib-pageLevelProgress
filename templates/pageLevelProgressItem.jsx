@@ -21,6 +21,7 @@ export default function PageLevelProgressItem(props) {
   const indicatorSeat = React.createRef();
   useEffect(() => {
     if (_isOptional) return;
+    if (props.isComponentTypeDisabled(_type)) return;
     const model = data.findById(_id);
     const item = new PageLevelProgressIndicatorView({
       model,
